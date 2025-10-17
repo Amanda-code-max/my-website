@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -87,39 +87,41 @@
                 </nav>
 
                 <!-- Hero Section -->
-                <section class="pt-32 pb-0 relative h-screen overflow-hidden flex items-center">
+                <section class="pt-20 pb-0 relative min-h-screen overflow-hidden flex items-center">
                     ${heroImages.map((img, idx) => `
                         <div class="absolute inset-0 transition-opacity duration-1000 ${idx === currentImageIndex ? 'opacity-100' : 'opacity-0'}" style="background-image: url(${img}); background-size: cover; background-position: center;">
-                            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                            <div class="absolute inset-0 bg-black bg-opacity-50"></div>
                         </div>
                     `).join('')}
-                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-                        <div class="max-w-2xl">
-                            <h1 class="text-6xl md:text-7xl font-black text-white mb-6 animate-fadeInUp">You lead.</h1>
-                            <h2 class="text-5xl md:text-6xl font-black text-white mb-8 animate-fadeInUp" style="animation-delay: 0.2s">I make it effortless.</h2>
-                            <p class="text-xl text-white mb-8 max-w-lg animate-fadeIn" style="animation-delay: 0.4s">Strategic virtual assistance that transforms how you lead.</p>
-                            <button class="px-8 py-4 rounded-full font-bold text-white transition-all hover:shadow-2xl" style="background-color: #F97316">Get Started Today →</button>
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-32">
+                        <div class="max-w-3xl">
+                            <h1 class="text-7xl md:text-8xl font-black text-white mb-4 animate-fadeInUp leading-tight">You lead.</h1>
+                            <h2 class="text-6xl md:text-7xl font-black text-white mb-8 animate-fadeInUp leading-tight" style="animation-delay: 0.2s">I make it effortless.</h2>
+                            <p class="text-2xl text-white mb-10 max-w-2xl animate-fadeIn leading-relaxed" style="animation-delay: 0.4s">Strategic virtual assistance that transforms how you lead. Reclaim your time, amplify your impact.</p>
+                            <button class="px-10 py-5 rounded-full font-bold text-white text-lg transition-all hover:shadow-2xl hover:scale-105" style="background-color: #F97316">Get Started Today →</button>
                         </div>
                     </div>
-                    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2 z-20">
+                    <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex gap-3 z-20">
                         ${heroImages.map((_, idx) => `
-                            <button onclick="changeImage(${idx})" class="w-3 h-3 rounded-full transition-all ${idx === currentImageIndex ? 'bg-white w-8' : 'bg-white bg-opacity-50'}"></button>
+                            <button onclick="changeImage(${idx})" class="w-4 h-4 rounded-full transition-all ${idx === currentImageIndex ? 'bg-white w-10' : 'bg-white bg-opacity-50'} hover:bg-white"></button>
                         `).join('')}
                     </div>
                 </section>
 
                 <!-- Services Section -->
-                <section id="services" class="py-24 px-4" style="background-color: #D8E2DC">
+                <section id="services" class="py-32 px-4" style="background-color: #D8E2DC">
                     <div class="max-w-7xl mx-auto">
-                        <div class="text-center mb-20">
-                            <h2 class="text-5xl font-black mb-6" style="color: #9D8189">What I Offer</h2>
+                        <div class="text-center mb-24">
+                            <p class="text-sm font-bold tracking-widest mb-3" style="color: #F97316">SERVICES</p>
+                            <h2 class="text-6xl md:text-7xl font-black mb-6" style="color: #9D8189">What I Offer</h2>
+                            <p class="text-xl text-gray-700 max-w-2xl mx-auto">Comprehensive executive support designed for ambitious leaders</p>
                         </div>
-                        <div class="grid md:grid-cols-3 gap-6">
+                        <div class="grid md:grid-cols-3 gap-8">
                             ${services.map(service => `
-                                <div class="service-card relative h-80 rounded-2xl overflow-hidden shadow-lg">
+                                <div class="service-card relative h-96 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow">
                                     <img src="${service.image}" alt="${service.title}" />
                                     <div class="service-overlay">
-                                        <h3>${service.title}</h3>
+                                        <h3 class="text-2xl">${service.title}</h3>
                                     </div>
                                 </div>
                             `).join('')}
@@ -128,19 +130,47 @@
                 </section>
 
                 <!-- CTA Section -->
-                <section class="py-32 px-4" style="background-color: #F97316">
-                    <div class="max-w-4xl mx-auto text-center">
-                        <h2 class="text-5xl font-black text-white mb-8">Let's Transform Your Executive Operations</h2>
-                        <button class="px-10 py-5 rounded-full font-bold text-lg text-white" style="background-color: #9D8189">Book Your Consultation →</button>
+                <section class="py-40 px-4" style="background-color: #F97316">
+                    <div class="max-w-5xl mx-auto text-center">
+                        <h2 class="text-6xl md:text-7xl font-black text-white mb-10 leading-tight">Let's Transform Your Executive Operations</h2>
+                        <p class="text-2xl text-white mb-12 max-w-2xl mx-auto">Schedule a consultation to discover how I can elevate your business.</p>
+                        <button class="px-12 py-6 rounded-full font-bold text-lg text-white transition-all hover:shadow-2xl hover:scale-105" style="background-color: #9D8189">Book Your Consultation →</button>
                     </div>
                 </section>
 
                 <!-- Footer -->
-                <footer class="py-16 px-4" style="background-color: #9D8189">
-                    <div class="max-w-7xl mx-auto text-center text-white">
-                        <p class="text-3xl font-black mb-4">CEO • Noir</p>
-                        <p>© 2025 CEO Noir & Co. All rights reserved.</p>
-                        <p class="mt-4">hello@ceonoir.co | +1 (555) 000-0000</p>
+                <footer class="py-20 px-4" style="background-color: #9D8189">
+                    <div class="max-w-7xl mx-auto">
+                        <div class="grid md:grid-cols-4 gap-12 mb-12">
+                            <div>
+                                <p class="text-4xl font-black text-white mb-2">CEO • Noir</p>
+                                <p class="text-amber-50">Excellence in Executive Support</p>
+                            </div>
+                            <div>
+                                <p class="font-black text-white mb-4 text-lg">Services</p>
+                                <div class="space-y-2 text-amber-50">
+                                    <p>Executive Admin</p>
+                                    <p>Digital Marketing</p>
+                                    <p>Financial Management</p>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="font-black text-white mb-4 text-lg">Company</p>
+                                <div class="space-y-2 text-amber-50">
+                                    <p>About</p>
+                                    <p>Testimonials</p>
+                                    <p>Blog</p>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="font-black text-white mb-4 text-lg">Contact</p>
+                                <p class="text-amber-50 mb-2">hello@ceonoir.co</p>
+                                <p class="text-amber-50">+1 (555) 000-0000</p>
+                            </div>
+                        </div>
+                        <div class="border-t pt-8" style="border-color: rgba(255,255,255,0.2)">
+                            <p class="text-center text-amber-50">© 2025 CEO Noir & Co. All rights reserved.</p>
+                        </div>
                     </div>
                 </footer>
             `;
